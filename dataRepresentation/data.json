@@ -1,0 +1,907 @@
+{
+	"India":{
+		"Products":[
+						{
+							"Type": "Tractor",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":20,
+										"Volume": 600
+									},
+									"2010-11":{
+										"Monetary":32,
+										"Volume":800
+									},
+									"2011-12":{
+										"Monetary":45,
+										"Volume":1100
+									}
+								}
+							
+						},
+						{
+							"Type": "Harvesters",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":8,
+										"Volume":160
+									},
+									"2010-11":{
+										"Monetary":14,
+										"Volume":200
+									},
+									"2011-12":{
+										"Monetary":16,
+										"Volume":220
+									}
+								}
+							
+						},
+						{
+							"Type": "Forest-Equipment",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":3,
+										"Volume":32
+									},
+									"2010-11":{
+										"Monetary":2.6,
+										"Volume":20
+									},
+									"2011-12":{
+										"Monetary":3.2,
+										"Volume":34
+									}
+								}
+							
+						},
+						{
+							"Type": "Sprayers",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":2,
+										"Volume":39
+									},
+									"2010-11":{
+										"Monetary":3.6,
+										"Volume":44
+									},
+									"2011-12":{
+										"Monetary":4.1,
+										"Volume":49
+									}
+								}
+							
+						}
+		],
+		"Coordinates":[0.77,0.5,0],
+		"vCoordinates":[0.79,0.5,0]
+		
+	}	,		
+	
+		"China":{
+		"Products":[
+						{
+							"Type": "Tractor",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":33,
+										"Volume":800
+									},
+									"2010-11":{
+										"Monetary":38,
+										"Volume":880
+									},
+									"2011-12":{
+										"Monetary":41,
+										"Volume":910
+									}
+								}
+							
+						},
+						{
+							"Type": "Harvesters",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":10,
+										"Volume":200
+									},
+									"2010-11":{
+										"Monetary":12,
+										"Volume":220
+									},
+									"2011-12":{
+										"Monetary":17,
+										"Volume":250
+									}
+								}
+							
+						},
+						{
+							"Type": "Forest-Equipment",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":3,
+										"Volume":110
+									},
+									"2010-11":{
+										"Monetary":3.2,
+										"Volume":122
+									},
+									"2011-12":{
+										"Monetary":3.8,
+										"Volume":132
+									}
+								}
+							
+						},
+						{
+							"Type": "Sprayers",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":4,
+										"Volume":89
+									},
+									"2010-11":{
+										"Monetary":4.6,
+										"Volume":94
+									},
+									"2011-12":{
+										"Monetary":5.3,
+										"Volume":118
+									}
+								}
+							
+						}
+		],
+		"Coordinates":[0.58,0.6,0],
+		"vCoordinates":[0.6,0.6,0]
+	},
+	"Australia":{
+		"Products":[
+						{
+							"Type": "Tractor",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":53,
+										"Volume":1800
+									},
+									"2010-11":{
+										"Monetary":62,
+										"Volume":2210
+									},
+									"2011-12":{
+										"Monetary":68,
+										"Volume":2343
+									}
+								}
+							
+						},
+						{
+							"Type": "Harvesters",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":21,
+										"Volume":440
+									},
+									"2010-11":{
+										"Monetary":26,
+										"Volume":513
+									},
+									"2011-12":{
+										"Monetary":22,
+										"Volume":418
+									}
+								}
+							
+						},
+						{
+							"Type": "Forest-Equipment",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":8,
+										"Volume":77
+									},
+									"2010-11":{
+										"Monetary":11,
+										"Volume":114
+									},
+									"2011-12":{
+										"Monetary":13.2,
+										"Volume":131
+									}
+								}
+							
+						},
+						{
+							"Type": "Sprayers",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":5.2,
+										"Volume":110
+									},
+									"2010-11":{
+										"Monetary":5.6,
+										"Volume":123
+									},
+									"2011-12":{
+										"Monetary":6.1,
+										"Volume":137
+									}
+								}
+							
+						}
+		],
+		"Coordinates":[0.3,0.15,0],
+		"vCoordinates":[0.32,0.15,0]
+	},
+	"England":{
+		"Products":[
+						{
+							"Type": "Tractor",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":12,
+										"Volume":220
+									},
+									"2010-11":{
+										"Monetary":14,
+										"Volume":246
+									},
+									"2011-12":{
+										"Monetary":16.5,
+										"Volume":263
+									}
+								}
+							
+						},
+						{
+							"Type": "Harvesters",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":4,
+										"Volume":116
+									},
+									"2010-11":{
+										"Monetary":4.7,
+										"Volume":129
+									},
+									"2011-12":{
+										"Monetary":5.4,
+										"Volume":135
+									}
+								}
+							
+						},
+						{
+							"Type": "Forest-Equipment",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":3.1,
+										"Volume":42
+									},
+									"2010-11":{
+										"Monetary":3.5,
+										"Volume":51
+									},
+									"2011-12":{
+										"Monetary":4.4,
+										"Volume":65
+									}
+								}
+							
+						},
+						{
+							"Type": "Sprayers",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":5,
+										"Volume":126
+									},
+									"2010-11":{
+										"Monetary":5.7,
+										"Volume":133
+									},
+									"2011-12":{
+										"Monetary":6.4,
+										"Volume":142
+									}
+								}
+							
+						}
+		],
+		"Coordinates":[7,4,2],
+		"vCoordinates":[7.4,4,2]
+	},
+	"Russia":{
+		"Products":[
+						{
+							"Type": "Tractor",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":16,
+										"Volume":430
+									},
+									"2010-11":{
+										"Monetary":23,
+										"Volume":456
+									},
+									"2011-12":{
+										"Monetary":26,
+										"Volume":462
+									}
+								}
+							
+						},
+						{
+							"Type": "Harvesters",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":11,
+										"Volume":188
+									},
+									"2010-11":{
+										"Monetary":12.4,
+										"Volume":197
+									},
+									"2011-12":{
+										"Monetary":13.1,
+										"Volume":213
+									}
+								}
+							
+						},
+						{
+							"Type": "Forest-Equipment",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":6.1,
+										"Volume":86
+									},
+									"2010-11":{
+										"Monetary":6.6,
+										"Volume":92
+									},
+									"2011-12":{
+										"Monetary":7.1,
+										"Volume":99
+									}
+								}
+							
+						},
+						{
+							"Type": "Sprayers",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":5.4,
+										"Volume":67
+									},
+									"2010-11":{
+										"Monetary":6.1,
+										"Volume":77
+									},
+									"2011-12":{
+										"Monetary":6.3,
+										"Volume":78
+									}
+								}
+							
+						}
+		],
+		"Coordinates":[0.38,0.85,0],
+		"vCoordinates":[0.39,0.85,0]
+	},
+	"France":{
+		"Products":[
+						{
+							"Type": "Tractor",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":18,
+										"Volume":320
+									},
+									"2010-11":{
+										"Monetary":19.7,
+										"Volume":356
+									},
+									"2011-12":{
+										"Monetary":21.7,
+										"Volume":411
+									}
+								}
+							
+						},
+						{
+							"Type": "Harvesters",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":15,
+										"Volume":208
+									},
+									"2010-11":{
+										"Monetary":15.2,
+										"Volume":213
+									},
+									"2011-12":{
+										"Monetary":16.3,
+										"Volume":226
+									}
+								}
+							
+						},
+						{
+							"Type": "Forest-Equipment",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":3,
+										"Volume":76
+									},
+									"2010-11":{
+										"Monetary":3.6,
+										"Volume":73
+									},
+									"2011-12":{
+										"Monetary":4.5,
+										"Volume":88
+									}
+								}
+							
+						},
+						{
+							"Type": "Sprayers",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":5,
+										"Volume":110
+									},
+									"2010-11":{
+										"Monetary":5.4,
+										"Volume":129
+									},
+									"2011-12":{
+										"Monetary":6.7,
+										"Volume":134
+									}
+								}
+							
+						}
+		],
+		"Coordinates":[13,6.5,1.3],
+		"vCoordinates":[13.8,6.5,1.3]
+	},
+	"Brazil":{
+		"Products":[
+						{
+							"Type": "Tractor",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":90,
+										"Volume":1400
+									},
+									"2010-11":{
+										"Monetary":100,
+										"Volume":1411
+									},
+									"2011-12":{
+										"Monetary":111,
+										"Volume":1532
+									}
+								}
+							
+						},
+						{
+							"Type": "Harvesters",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":32,
+										"Volume":441
+									},
+									"2010-11":{
+										"Monetary":36,
+										"Volume":476
+									},
+									"2011-12":{
+										"Monetary":42,
+										"Volume":486
+									}
+								}
+							
+						},
+						{
+							"Type": "Forest-Equipment",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":27,
+										"Volume":179
+									},
+									"2010-11":{
+										"Monetary":28.3,
+										"Volume":182
+									},
+									"2011-12":{
+										"Monetary":26,
+										"Volume":168
+									}
+								}
+							
+						},
+						{
+							"Type": "Sprayers",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":16,
+										"Volume":314
+									},
+									"2010-11":{
+										"Monetary":18.3,
+										"Volume":333
+									},
+									"2011-12":{
+										"Monetary":17.4,
+										"Volume":321
+									}
+								}
+							
+						}
+		],
+		"Coordinates":[40,-28,90],
+		"vCoordinates":[43,-28,90]
+	},
+	"Argentina":{
+		"Products":[
+						{
+							"Type": "Tractor",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":80,
+										"Volume":1580
+									},
+									"2010-11":{
+										"Monetary":88,
+										"Volume":1621
+									},
+									"2011-12":{
+										"Monetary":92,
+										"Volume":1772
+									}
+								}
+							
+						},
+						{
+							"Type": "Harvesters",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":20,
+										"Volume":309
+									},
+									"2010-11":{
+										"Monetary":23,
+										"Volume":314
+									},
+									"2011-12":{
+										"Monetary":26,
+										"Volume":332
+									}
+								}
+							
+						},
+						{
+							"Type": "Forest-Equipment",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":16,
+										"Volume":112
+									},
+									"2010-11":{
+										"Monetary":14,
+										"Volume":98
+									},
+									"2011-12":{
+										"Monetary":17.3,
+										"Volume":125
+									}
+								}
+							
+						},
+						{
+							"Type": "Sprayers",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":8,
+										"Volume":87
+									},
+									"2010-11":{
+										"Monetary":8.4,
+										"Volume":99
+									},
+									"2011-12":{
+										"Monetary":8.1,
+										"Volume":95
+									}
+								}
+							
+						}
+		],
+		"Coordinates":[40,-85,90],
+		"vCoordinates":[43,-85,90]
+	},
+	"Mexico":{
+		"Products":[
+						{
+							"Type": "Tractor",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":34,
+										"Volume":600
+									},
+									"2010-11":{
+										"Monetary":35.4,
+										"Volume":642
+									},
+									"2011-12":{
+										"Monetary":31,
+										"Volume":618
+									}
+								}
+							
+						},
+						{
+							"Type": "Harvesters",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":15,
+										"Volume":155
+									},
+									"2010-11":{
+										"Monetary":15.4,
+										"Volume":162
+									},
+									"2011-12":{
+										"Monetary":17.5,
+										"Volume":174
+									}
+								}
+							
+						},
+						{
+							"Type": "Forest-Equipment",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":6.5,
+										"Volume":261
+									},
+									"2010-11":{
+										"Monetary":6.8,
+										"Volume":273
+									},
+									"2011-12":{
+										"Monetary":6.6,
+										"Volume":273
+									}
+								}
+							
+						},
+						{
+							"Type": "Sprayers",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":4.3,
+										"Volume":65
+									},
+									"2010-11":{
+										"Monetary":4.6,
+										"Volume":71
+									},
+									"2011-12":{
+										"Monetary":5.7,
+										"Volume":86
+									}
+								}
+							
+						}
+		],
+		"Coordinates":[-10,-3,100],
+		"vCoordinates":[-12,-3,100]
+	},
+	"Canada":{
+		"Products":[
+						{
+							"Type": "Tractor",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":46,
+										"Volume":1100
+									},
+									"2010-11":{
+										"Monetary":48.7,
+										"Volume":1285
+									},
+									"2011-12":{
+										"Monetary":56.6,
+										"Volume":1322
+									}
+								}
+							
+						},
+						{
+							"Type": "Harvesters",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":22,
+										"Volume":269
+									},
+									"2010-11":{
+										"Monetary":28,
+										"Volume":287
+									},
+									"2011-12":{
+										"Monetary":33.2,
+										"Volume":322
+									}
+								}
+							
+						},
+						{
+							"Type": "Forest-Equipment",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":13.9,
+										"Volume":164
+									},
+									"2010-11":{
+										"Monetary":14.2,
+										"Volume":170
+									},
+									"2011-12":{
+										"Monetary":15.4,
+										"Volume":181
+									}
+								}
+							
+						},
+						{
+							"Type": "Sprayers",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":9.6,
+										"Volume":136
+									},
+									"2010-11":{
+										"Monetary":10.4,
+										"Volume":148
+									},
+									"2011-12":{
+										"Monetary":12.3,
+										"Volume":157
+									}
+								}
+							
+						}
+		],
+		"Coordinates":[-30,65,100],
+		"vCoordinates":[-32,68,100]
+	},
+	"America":{
+		"Products":[
+						{
+							"Type": "Tractor",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":65,
+										"Volume":821
+									},
+									"2010-11":{
+										"Monetary":68,
+										"Volume":844
+									},
+									"2011-12":{
+										"Monetary":73,
+										"Volume":831
+									}
+								}
+							
+						},
+						{
+							"Type": "Harvesters",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":36,
+										"Volume":327
+									},
+									"2010-11":{
+										"Monetary":37.4,
+										"Volume":337
+									},
+									"2011-12":{
+										"Monetary":41.3,
+										"Volume":353
+									}
+								}
+							
+						},
+						{
+							"Type": "Forest-Equipment",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":21,
+										"Volume":230
+									},
+									"2010-11":{
+										"Monetary":22.4,
+										"Volume":243
+									},
+									"2011-12":{
+										"Monetary":23.5,
+										"Volume":256
+									}
+								}
+							
+						},
+						{
+							"Type": "Sprayers",
+							"Year":
+								{	
+									"2009-10":{
+										"Monetary":12.3,
+										"Volume":182
+									},
+									"2010-11":{
+										"Monetary":15.3,
+										"Volume":197
+									},
+									"2011-12":{
+										"Monetary":15.6,
+										"Volume":200
+									}
+								}
+							
+						}
+		],
+		"Coordinates":[-10,25,100],
+		"vCoordinates":[-12,25,100]
+	}		
+}	
+

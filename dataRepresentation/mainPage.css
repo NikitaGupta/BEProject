@@ -1,0 +1,94 @@
+#productsContainer, #yearsContainer, #colourCodeContainer, #scaleContainer, #header {
+    font-family: Verdana;
+    margin: 0 auto;
+    width: 20%;
+    /*border: 1px solid #ddd; */
+}
+
+#productsContainer {
+    position: absolute;
+    left: 880px;
+}
+
+#yearsContainer {
+    position: absolute;
+    left: 1080px;
+}
+
+#colourCodeContainer {
+    position: absolute;
+    left: 1080px;
+    top: 200px;
+}
+
+#scaleContainer {
+    position: absolute;
+    left: 1080px;
+    top: 350px;
+}
+
+#header {
+    position: absolute;
+    left: 300px;
+    color: #80FFFF;
+}
+
+.code {
+    width: 10px;
+    height: 10px;
+    display: inline;
+}
+
+hr {
+    border-color: #6C6C6C;
+}
+
+h3 {
+    margin: 0;
+    color: #FFCC66;
+    font-weight: normal;
+    font-family: Verdana, Geneva, sans-serif;
+    font-size: 1.4em;
+}
+
+h2 {
+    margin: 0;
+    font-weight: bold;
+    font-family: Verdana, Geneva, sans-serif;
+}
+
+.list {
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    padding: 0;
+    text-indent: 0;
+    text-transform: capitalize;
+    list-style-type: none;
+}
+
+.list li {
+    padding: 0;
+    margin: 0;
+    text-indent: 0;
+    color: #6C6C6C;
+}
+
+.list li a {
+    letter-spacing: -1px;
+    text-decoration: none;
+    color: #6C6C6C;
+    font-size: 0.8em;
+    padding: 0 2px;
+}
+
+.list li a:hover, .list a.current {
+    color: #093;
+    border-top: none;
+    font-size: 1.2em;
+}
+
+.list a.current {
+    color: #093;
+}
+

@@ -1,0 +1,103 @@
+<html>
+
+<head>
+    <title> Data Representation </title>
+    <link rel="stylesheet" type="text/css" href="mainPage.css"/>
+    <script type="text/javascript" src="jquery.tools.min.js"></script>
+    <script src="Three.js"></script>
+    <script type="text/javascript" src="underscore-min.js"></script>
+    <script type="text/javascript" src="dataRender.js"></script>
+
+</head>
+<body style="background-color: black;">
+
+
+<div id="header" align="center">
+
+    <h2> Global Sales Data </h2>
+
+</div>
+
+
+<div id="yearsContainer" align="center">
+
+    <h3> Year </h3>
+    <hr>
+    <ul class="list" id="yearList">
+        <li><a href="#" class="current">2009-10</a></li>
+        <li><a href="#">2010-11</a></li>
+        <li><a href="#">2011-12</a></li>
+    </ul>
+</div>
+
+
+<div id="canvasContainer" style="position:absolute; left:250px;">
+    <div id="canvasDiv"></div>
+</div>
+
+
+<div id="productsContainer" align="center">
+    <h3> Select Product </h3>
+    <hr>
+    <ul class="list" id="productList">
+        <li><a href="#" class="current">Tractor</a></li>
+        <li><a href="#">Harvesters</a></li>
+        <li><a href="#">Forest-Equipment</a></li>
+        <li><a href="#">Sprayers</a></li>
+    </ul>
+</div>
+
+<div id="colourCodeContainer" align="center">
+
+    <table style="color: white;" cellspacing="10px">
+        <tr>
+            <td width="15px" bgcolor="#66FF33"></td>
+            <td>Monetary sale</td>
+        </tr>
+        <tr>
+            <td width="15px" bgcolor="#FFFF00"></td>
+            <td>Volume sale</td>
+        </tr>
+    </table>
+</div>
+
+
+<div id="scaleContainer" align="center">
+    <h3> Scale </h3>
+    <hr>
+    <table style="color: white;" cellspacing="10px">
+        <tr>
+            <td width="15px" bgcolor="#66FF33"></td>
+            <td>1 unit = 60 million dollars</td>
+        </tr>
+        <tr>
+            <td width="15px" bgcolor="#FFFF00"></td>
+            <td>1 unit = 1000 pieces</td>
+        </tr>
+    </table>
+</div>
+
+<script type="text/javascript">
+
+    $(document).ready(function () {
+        getData();
+        drawGlobe();
+        $("#productList li a.current").trigger('click');
+    });
+
+    $('a').click(function () {
+
+        var id = $(this).parent().parent().attr('id');
+        $('#' + id + ' li a.current').removeClass('current');
+        $(this).toggleClass('current');
+
+        var product = $("#productList li a.current").text();
+        var year = $("#yearList li a.current").text();
+
+        clearLines();
+        drawData(product, year);
+    });
+
+</script>
+</body>
+</html>
