@@ -1,4 +1,4 @@
-#productsContainer, #yearsContainer, #colourCodeContainer, #scaleContainer, #header,#msgContainer {
+#productsContainer, #yearsContainer, #colourCodeContainer, #scaleContainer, #header {
     font-family: Verdana;
     margin: 0 auto;
     width: 20%;
@@ -13,12 +13,6 @@
 #yearsContainer {
     position: absolute;
     left: 1080px;
-}
-
-#msgContainer{
-    position: absolute;
-    left: 780px;
-    top: 200px;
 }
 #colourCodeContainer {
     position: absolute;
