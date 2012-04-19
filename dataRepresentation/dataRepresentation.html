@@ -6,7 +6,7 @@
     <script type="text/javascript" src="jquery.tools.min.js"></script>
     <script src="Three.js"></script>
     <script type="text/javascript" src="underscore-min.js"></script>
-    <script type="text/javascript" src="dataRender.js"></script>
+    <script type="text/javascript" src="dataRender_Canvas.js"></script>
 
 </head>
 <body style="background-color: black;">
@@ -46,17 +46,17 @@
         <li><a href="#">Sprayers</a></li>
     </ul>
 </div>
-
+<div id="msgContainer" align="center"><h3> Messages </h3></div>
 <div id="colourCodeContainer" align="center">
 
     <table style="color: white;" cellspacing="10px">
         <tr>
             <td width="15px" bgcolor="#66FF33"></td>
-            <td>Monetary sale</td>
+            <td><input type="checkbox" checked id="Monetary" onclick="toggleDisplay(this.id)"/> Monetary sale</td>
         </tr>
         <tr>
             <td width="15px" bgcolor="#FFFF00"></td>
-            <td>Volume sale</td>
+            <td><input type="checkbox" checked id="Volume" onclick="toggleDisplay(this.id)"/>Volume sale</td>
         </tr>
     </table>
 </div>
