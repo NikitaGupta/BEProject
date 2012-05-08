@@ -6,10 +6,10 @@
     <script type="text/javascript" src="jquery.tools.min.js"></script>
     <script src="Three.js"></script>
     <script type="text/javascript" src="underscore-min.js"></script>
-    <script type="text/javascript" src="dataRender_Canvas.js"></script>
+    <script type="text/javascript" src="dataRender.js"></script>
 
 </head>
-<body style="background-color: black;">
+<body background="star.jpg">
 
 
 <div id="header" align="center">
@@ -46,17 +46,19 @@
         <li><a href="#">Sprayers</a></li>
     </ul>
 </div>
-
+<div id="msgContainer" align="center"><h3> Messages </h3></div>
 <div id="colourCodeContainer" align="center">
 
     <table style="color: white;" cellspacing="10px">
         <tr>
-            <td width="15px" bgcolor="#66FF33"></td>
-            <td><input type="checkbox" checked id="Monetary" onclick="toggleDisplay(this.id)"/> Monetary sale</td>
-        </tr>
-        <tr>
             <td width="15px" bgcolor="#FFFF00"></td>
-            <td><input type="checkbox" checked id="Volume" onclick="toggleDisplay(this.id)"/>Volume sale</td>
+            <td>Monetary sale</td>
+
+            <!--<td><input type="checkbox" checked id="Monetary" onclick="toggleDisplay(this.id)"/> Monetary sale</td>-->
+        </tr>
+        <!--<tr>-->
+            <!--<td width="15px" bgcolor="#FFFF00"></td>-->
+            <!--<td><input type="checkbox" checked id="Volume" onclick="toggleDisplay(this.id)"/>Volume sale</td>-->
         </tr>
     </table>
 </div>
@@ -80,8 +82,11 @@
 <script type="text/javascript">
 
     $(document).ready(function () {
+
+        $("#msgContainer").hide();
         getData();
         drawGlobe();
+
         $("#productList li a.current").trigger('click');
     });
 

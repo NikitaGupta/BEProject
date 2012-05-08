@@ -12,7 +12,7 @@ var SCREEN_WIDTH = 800,
 
     camera, scene, renderer;
 var mouseX = 0, mouseY = 0;
-
+var projector, intersected;
 var phi = 0, theta = 0;
 
 var isUser = false, lat = 0, lon = 0;
@@ -21,6 +21,7 @@ var cubeTarget, mesh;
 var monetaryDataArray = new Array();
 var volumeDataArray = new Array();
 
+var movedFlag;
 cubeTarget = new THREE.Vector3(0, 0, 0);
 
 function drawGlobe() {
@@ -38,25 +39,24 @@ function drawGlobe() {
     scene.add(camera);
     projector = new THREE.Projector();
 
-    renderer = new THREE.CanvasRenderer();
+
+    renderer = new THREE.WebGLRenderer();
     renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
     container.appendChild(renderer.domElement);
 
-    mesh = new THREE.Mesh(new THREE.SphereGeometry(450, 20, 20), new THREE.MeshBasicMaterial(
-        { ambient:0xFFFFFF, map:THREE.ImageUtils.loadTexture('back1.png')}));
+    mesh = new THREE.Mesh(new THREE.SphereGeometry(450, 20, 20), new THREE.MeshLambertMaterial(
+        { ambient:0xFFFFFF, map:THREE.ImageUtils.loadTexture('globe.jpg')}));
     mesh.overdraw = true;
     scene.add(mesh);
 
+
     ambientLight = new THREE.AmbientLight(0xffffff);
     scene.add(ambientLight);
+
     document.addEventListener('mousedown', onDocumentMouseDown, false);
-
     document.addEventListener('mousemove', onDocumentMouseMove, false);
-
     document.addEventListener('mouseup', onDocumentMouseUp, false);
-
     animate();
-
 }
 
 var productData;
@@ -95,54 +95,36 @@ function drawData(product, year) {
     volumeDataArray = new Array();
 
     for (var i = 0; i < 11; i++) {
-        var geometry = new THREE.Geometry();
 
-        var vector = new THREE.Vector3(coOrdinates[i][0] * 2 - 1, coOrdinates[i][1] * 2 - 1, coOrdinates[i][2] * 2 - 1);
-        vector.normalize();
-        vector.multiplyScalar(450);
-
-        geometry.vertices.push(new THREE.Vertex(vector));
-
-        var vector2 = vector.clone();
         var temp = productData[i].Monetary;
-        temp = temp / 60;
-        vector2.multiplyScalar(temp * 0.6 + 1);
+        temp = temp / 30;
+        temp = temp * 0.6 + 1;
 
-        geometry.vertices.push(new THREE.Vertex(vector2));
+        var object = new THREE.Mesh(new THREE.CubeGeometry(3, 3, 100), new THREE.MeshLambertMaterial({ color:0xffff00 }));
 
-        var line = new THREE.Line(geometry, new THREE.LineBasicMaterial({ color:0x66FF33, opacity:1, linewidth:3 }));
-        scene.add(line);
-        monetaryDataArray.push(line);
+        object.material.ambient = object.material.color;
+        object.position.x = coOrdinates[i][0] * 30 - 1;
+        object.position.y = coOrdinates[i][1] * 30 - 1;
+        object.position.z = coOrdinates[i][2] * 30 - 1;
 
-        // Volume
+        object.rotation.x = ( 0.08 * 360 ) * Math.PI / 180;
+        object.rotation.y = ( 1 * 360 ) * Math.PI / 180;
+        object.rotation.z = ( 1 * 360 ) * Math.PI / 180;
 
-        geometry = new THREE.Geometry();
-        vector = new THREE.Vector3((vcoOrdinates[i][0]) * 2 - 1, vcoOrdinates[i][1] * 2 - 1, vcoOrdinates[i][2] * 2 - 1);
+        object.scale.x = 1 * 2 + 1;
+        object.scale.y = 1 * 2 + 1;
+        object.scale.z = temp * 2 + 1;
+        object.data = productData[i];
 
-        vector.normalize();
-        vector.multiplyScalar(450);
-        geometry.vertices.push(new THREE.Vertex(vector));
+        object.lookAt(mesh.position);
+        scene.add(object);
 
-        vector2 = vector.clone();
-        temp = productData[i].Volume;
-        temp = temp / 1000;
-        vector2.multiplyScalar(temp * 0.6 + 1);
+        monetaryDataArray.push(object);
 
-        geometry.vertices.push(new THREE.Vertex(vector2));
-        line = new THREE.Line(geometry, new THREE.LineBasicMaterial({ color:0xFFFF00, opacity:1, linewidth:3 }));
-        scene.add(line);
-        volumeDataArray.push(line);
     }
-
-    document.addEventListener('mousedown', onDocumentMouseDown, false);
-
-    document.addEventListener('mousemove', onDocumentMouseMove, false);
-
-    document.addEventListener('mouseup', onDocumentMouseUp, false);
-
     animate();
-
 }
+
 function getProductData(productType, year) {
     productData = new Array();
     _.each(dataFiles, function (obj, key) {
@@ -154,6 +136,7 @@ function getProductData(productType, year) {
         });
     });
 }
+
 
 function onDocumentMouseDown(event) {
 
@@ -170,17 +153,44 @@ function onDocumentMouseDown(event) {
 
 }
 
-
 function onDocumentMouseMove(event) {
     if (isUser && (event.clientX > 300 && event.clientX < 950) && (event.clientY < 450)) {
         lon = -( mouseX - event.clientX ) + onPointerDownLon;
         lat = ( event.clientY - mouseY ) + onPointerDownLat;
     }
+    else if (!isUser) {
+
+        mouseX = ( event.clientX / SCREEN_WIDTH ) * 2 - 1;
+        mouseY = -( event.clientY / SCREEN_HEIGHT ) * 2 + 1;
+    }
+
+    var vector = new THREE.Vector3(mouseX, mouseY, 1);
+    projector.unprojectVector(vector, camera);
+
+    var ray = new THREE.Ray(camera.position, vector.subSelf(camera.position).normalize());
+    var intersects = ray.intersectObjects(scene.children);
+
+    if (intersects.length > 0) {
+
+        if (intersects.length == 1 && intersects[0].object.geometry instanceof THREE.SphereGeometry)
+            $('#msgContainer').hide();
+        else {
+            _.each(intersects, function (intersectedObject) {
+                if (intersectedObject.object.geometry instanceof THREE.CubeGeometry)
+                    $('#msgContainer').html("<br> Country : " + intersectedObject.object.data.Country +
+                        "<br>Monetary : " + intersectedObject.object.data.Monetary +
+                        "<br>Volume : " + intersectedObject.object.data.Volume + "<br><br>");
+                $("#msgContainer").css({top:event.clientY, left:event.clientX}).show();
+            });
+        }
+    } else {
+        intersected = null;
+        $('#msgContainer').hide();
+    }
 }
 
 function onDocumentMouseUp(event) {
     isUser = false;
-
 }
 
 function animate() {
@@ -197,15 +207,15 @@ function render() {
     camera.position.y = 1200 * Math.cos(phi);
     camera.position.z = 1200 * Math.sin(phi) * Math.sin(theta);
     camera.lookAt(scene.position);
+
+
     cubeTarget.x = -camera.position.x;
     cubeTarget.y = -camera.position.y;
     cubeTarget.z = -camera.position.z;
-
     renderer.clear();
     renderer.render(scene, camera);
+
 }
-
-
 function clearLines() {
 
     if (monetaryDataArray.length) {
@@ -213,29 +223,4 @@ function clearLines() {
             scene.remove(this);
         });
     }
-    if (volumeDataArray.length) {
-        $.each(volumeDataArray, function (index) {
-            scene.remove(this);
-        });
-    }
 }
-
-function toggleDisplay(id){
-    var temp;
-    if(id=="Monetary")
-        temp=monetaryDataArray;
-    else
-        temp=volumeDataArray;
-
-    if ( $('#'+id).is(':checked')){
-        $.each(temp, function (index) {
-            scene.add(this);
-        });
-    }
-    else {
-        $.each(temp, function (index) {
-            scene.remove(this);
-        });
-    }
-}
-
