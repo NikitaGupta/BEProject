@@ -1,8 +1,7 @@
-#productsContainer, #yearsContainer, #colourCodeContainer, #scaleContainer, #header,#msgContainer {
+#productsContainer, #yearsContainer, #colourCodeContainer,  #scaleContainer, #header,#msgContainer {
     font-family: Verdana;
     margin: 0 auto;
     width: 20%;
-    /*border: 1px solid #ddd; */
 }
 
 #productsContainer {
@@ -26,8 +25,9 @@
 }
 #colourCodeContainer {
     position: absolute;
-    left: 1080px;
+    left: 930px;
     top: 200px;
+    width: 30%;
 }
 
 #scaleContainer {

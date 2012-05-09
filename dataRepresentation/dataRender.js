@@ -162,7 +162,6 @@ function onDocumentMouseMove(event) {
 
     var vector = new THREE.Vector3(mouseX, mouseY, 1);
     projector.unprojectVector(vector, camera);
-
     var ray = new THREE.Ray(camera.position, vector.subSelf(camera.position).normalize());
     var intersects = ray.intersectObjects(scene.children);
 
@@ -171,11 +170,13 @@ function onDocumentMouseMove(event) {
         if (intersects.length == 1 && intersects[0].object.geometry instanceof THREE.SphereGeometry)
             $('#msgContainer').hide();
         else {
+
+            var ID = $('input[type=radio]:checked').attr('id');
+
             _.each(intersects, function (intersectedObject) {
                 if (intersectedObject.object.geometry instanceof THREE.CubeGeometry)
                     $('#msgContainer').html("<br> Country : " + intersectedObject.object.data.Country +
-                        "<br>Monetary : " + intersectedObject.object.data.Monetary +
-                        "<br>Volume : " + intersectedObject.object.data.Volume + "<br><br>");
+                        "<br>" + ID + " : " + intersectedObject.object.data[ID] + "<br><br>");
                 $("#msgContainer").css({top:event.clientY, left:event.clientX}).show();
             });
         }
@@ -224,11 +225,12 @@ function changeSalesData(id) {
             break;
         case 'Volume' :
             scale = 1000;
-            newColour = '0xFF00FF';
+            newColour = '0x00FF00';
             break;
     }
 
     $.each(dataArray, function (index,object) {
+//        scene.remove(this);
         object.scale.z = (productData[index][ID] /scale ) *2 +1;
         object.material.color.setHex(newColour);
     });
