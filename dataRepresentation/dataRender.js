@@ -18,8 +18,7 @@ var phi = 0, theta = 0;
 var isUser = false, lat = 0, lon = 0;
 
 var cubeTarget, mesh;
-var monetaryDataArray = new Array();
-var volumeDataArray = new Array();
+var dataArray = new Array();
 
 var movedFlag;
 cubeTarget = new THREE.Vector3(0, 0, 0);
@@ -87,18 +86,15 @@ function getData() {
     });
 }
 
-function drawData(product, year) {
+function drawOnLoadData(product, year) {
+
     getProductData(product, year);
-
-    monetaryDataArray = new Array();
-
-    volumeDataArray = new Array();
+    dataArray = new Array();
 
     for (var i = 0; i < 11; i++) {
 
         var temp = productData[i].Monetary;
         temp = temp / 30;
-        temp = temp * 0.6 + 1;
 
         var object = new THREE.Mesh(new THREE.CubeGeometry(3, 3, 100), new THREE.MeshLambertMaterial({ color:0xffff00 }));
 
@@ -119,7 +115,7 @@ function drawData(product, year) {
         object.lookAt(mesh.position);
         scene.add(object);
 
-        monetaryDataArray.push(object);
+        dataArray.push(object);
 
     }
     animate();
@@ -216,11 +212,24 @@ function render() {
     renderer.render(scene, camera);
 
 }
-function clearLines() {
 
-    if (monetaryDataArray.length) {
-        $.each(monetaryDataArray, function (index) {
-            scene.remove(this);
-        });
+function changeSalesData(id) {
+    var scale, newColour;
+    var ID = id;
+
+    switch (id) {
+        case 'Monetary':
+            scale = 30;
+            newColour = '0xFFFF00';
+            break;
+        case 'Volume' :
+            scale = 1000;
+            newColour = '0xFF00FF';
+            break;
     }
+
+    $.each(dataArray, function (index,object) {
+        object.scale.z = (productData[index][ID] /scale ) *2 +1;
+        object.material.color.setHex(newColour);
+    });
 }

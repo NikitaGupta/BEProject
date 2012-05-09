@@ -52,13 +52,11 @@
     <table style="color: white;" cellspacing="10px">
         <tr>
             <td width="15px" bgcolor="#FFFF00"></td>
-            <td>Monetary sale</td>
-
-            <!--<td><input type="checkbox" checked id="Monetary" onclick="toggleDisplay(this.id)"/> Monetary sale</td>-->
+            <td><input type="radio" checked id="Monetary" name="salesValue"/> Monetary sale</td>
         </tr>
-        <!--<tr>-->
-            <!--<td width="15px" bgcolor="#FFFF00"></td>-->
-            <!--<td><input type="checkbox" checked id="Volume" onclick="toggleDisplay(this.id)"/>Volume sale</td>-->
+        <tr>
+            <td width="15px" bgcolor="#FF00FF"></td>
+            <td><input type="radio" id="Volume" name="salesValue"/> Volume sale</td>
         </tr>
     </table>
 </div>
@@ -87,22 +85,28 @@
         getData();
         drawGlobe();
 
-        $("#productList li a.current").trigger('click');
+        var product = $("#productList li a.current").text();
+        var year = $("#yearList li a.current").text();
+
+        drawOnLoadData(product, year);
     });
 
+    
     $('a').click(function () {
 
         var id = $(this).parent().parent().attr('id');
         $('#' + id + ' li a.current').removeClass('current');
-        $(this).toggleClass('current');
 
+        $(this).toggleClass('current');
         var product = $("#productList li a.current").text();
         var year = $("#yearList li a.current").text();
-
-        clearLines();
-        drawData(product, year);
+        getProductData(product, year);
+        changeSalesData($('input[type=radio]:checked').attr('id'));
     });
 
+    $("input[type=radio]").change(function () {
+        changeSalesData($(this).attr('id'));
+    });
 </script>
 </body>
 </html>
